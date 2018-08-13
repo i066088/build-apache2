@@ -1,6 +1,5 @@
 FROM i066088/sles11sp3-dev
 MAINTAINER andy "andy.bai@sap.com"
-#COPY hanaclient /home/installer/hanaclient
 
 RUN zypper -n install --auto-agree-with-licenses pcre-devel
 RUN zypper -n install --auto-agree-with-licenses libexpat-devel
