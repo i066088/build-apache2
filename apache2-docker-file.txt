@@ -1,6 +1,8 @@
 FROM i066088/sles11sp3-dev
 MAINTAINER andy "andy.bai@sap.com"
 
+RUN zypper -n install --auto-agree-with-licenses lua=5.1.4-1.15
+RUN zypper -n install --auto-agree-with-licenses lua-devel=5.1.4-1.15
 RUN zypper -n install --auto-agree-with-licenses pcre-devel
 RUN zypper -n install --auto-agree-with-licenses libexpat-devel
 RUN zypper -n install zlib-devel
@@ -20,7 +22,7 @@ RUN tar xzvf httpd-2.4.34.tar.gz
 RUN cd apr-1.6.3 && ./configure && make && make install
 RUN cd apr-util-1.6.1 && ./configure --with-apr=/usr/local/apr && make && make install
 RUN cd httpd-2.4.34 && \
-        ./configure --with-apr=/usr/local/apr --enable-dialup --enable-reflector --enable-usertrack --enable-mime-magic --enable-log-forensic --enable-heartbeat --enable-heartmonitor --enable-dav-lock --enable-asis --enable-slotmem-plain --enable-proxy-fdpass --enable-data --enable-charset-lite --enable-echo --enable-watchdog --enable-mpms-shared="all" && \
+        ./configure --with-apr=/usr/local/apr --enable-dialup --enable-reflector --enable-usertrack --enable-mime-magic --enable-log-forensic --enable-heartbeat --enable-heartmonitor --enable-dav-lock --enable-asis --enable-slotmem-plain --enable-proxy-fdpass --enable-data --enable-charset-lite --enable-echo --enable-watchdog --enable-lua=shared --enable-mpms-shared="all" && \
         make && make install
 
 
