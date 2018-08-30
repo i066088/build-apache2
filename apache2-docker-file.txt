@@ -1,5 +1,5 @@
 FROM i066088/sles11sp3-dev
-MAINTAINER andy "andy.bai@sap.com"
+MAINTAINER andy "i066088.b1.sap@gmail.com"
 
 RUN zypper -n install --auto-agree-with-licenses lua=5.1.4-1.15
 RUN zypper -n install --auto-agree-with-licenses lua-devel=5.1.4-1.15
