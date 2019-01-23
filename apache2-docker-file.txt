@@ -20,6 +20,9 @@ RUN tar xzvf apr-1.6.3.tar.gz
 RUN tar xzvf apr-util-1.6.1.tar.gz
 RUN tar xzvf httpd-2.4.34.tar.gz
 
+RUN zypper -n install --auto-agree-with-licenses gcc 
+RUN zypper -n install --auto-agree-with-licenses gcc-c++
+
 RUN cd apr-1.6.3 && ./configure && make && make install
 RUN cd apr-util-1.6.1 && ./configure --with-apr=/usr/local/apr && make && make install
 RUN cd httpd-2.4.34 && \
