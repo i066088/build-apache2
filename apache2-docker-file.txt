@@ -11,9 +11,9 @@ RUN zypper -n install  libopenssl-devel
 RUN mkdir /home/apache_build
 WORKDIR /home/apache_build/
 
-ADD http://mirrors.tuna.tsinghua.edu.cn/apache//httpd/httpd-2.4.34.tar.gz .
-ADD http://mirrors.shu.edu.cn/apache//apr/apr-1.6.3.tar.gz .
-ADD http://mirrors.shu.edu.cn/apache//apr/apr-util-1.6.1.tar.gz .
+ADD http://archive.apache.org/dist/httpd/httpd-2.4.34.tar.gz .
+ADD https://archive.apache.org/dist/apr/apr-1.6.3.tar.gz .
+ADD https://www.apache.org/dist/apr/apr-util-1.6.1.tar.gz .
 
 RUN tar xzvf apr-1.6.3.tar.gz
 RUN tar xzvf apr-util-1.6.1.tar.gz
