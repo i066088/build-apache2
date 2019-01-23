@@ -8,6 +8,8 @@ RUN zypper -n install --auto-agree-with-licenses libexpat-devel
 RUN zypper -n install --auto-agree-with-licenses zlib-devel
 RUN zypper -n install --auto-agree-with-licenses libopenssl-devel
 RUN zypper -n install --auto-agree-with-licenses tar
+RUN zypper -n install --auto-agree-with-licenses make
+RUN zypper -n install --auto-agree-with-licenses file
 
 RUN mkdir /home/apache_build
 WORKDIR /home/apache_build/
@@ -22,6 +24,7 @@ RUN tar xzvf httpd-2.4.34.tar.gz
 
 RUN zypper -n install --auto-agree-with-licenses gcc 
 RUN zypper -n install --auto-agree-with-licenses gcc-c++
+RUN zypper -n install --auto-agree-with-licenses make
 
 RUN cd apr-1.6.3 && ./configure && make && make install
 RUN cd apr-util-1.6.1 && ./configure --with-apr=/usr/local/apr && make && make install
