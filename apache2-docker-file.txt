@@ -5,8 +5,9 @@ RUN zypper -n install --auto-agree-with-licenses lua=5.1.4-1.15
 RUN zypper -n install --auto-agree-with-licenses lua-devel=5.1.4-1.15
 RUN zypper -n install --auto-agree-with-licenses pcre-devel
 RUN zypper -n install --auto-agree-with-licenses libexpat-devel
-RUN zypper -n install zlib-devel
-RUN zypper -n install  libopenssl-devel
+RUN zypper -n install --auto-agree-with-licenses zlib-devel
+RUN zypper -n install --auto-agree-with-licenses libopenssl-devel
+RUN zypper -n install --auto-agree-with-licenses tar
 
 RUN mkdir /home/apache_build
 WORKDIR /home/apache_build/
