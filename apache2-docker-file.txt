@@ -1,6 +1,11 @@
 FROM i066088/sles11sp3-dev
 MAINTAINER andy "i066088.b1.sap@gmail.com"
 
+RUN zypper addrepo -G -k -f http://linuxinfra.wdf.sap.corp:1080/ldt/repos/updates/sles11.4/sles11-sdk-sp4-updates/ SLES_11_SP4_SDK_UPDATES
+RUN zypper addrepo -G -k -f http://linuxinfra.wdf.sap.corp:1080/ldt/repos/updates/sles11.4/sles11-sp4-updates/ SLES_11_SP4_UPDATES
+RUN zypper addrepo -G -k -f http://linuxinfra.wdf.sap.corp:1080/ldt/repos/updates/sles11.4/sles11-sp4-pool/ SLES_11_SP4_POOL
+RUN zypper addrepo -G -k -f http://linuxinfra.wdf.sap.corp:1080/ldt/repos/updates/sles11.4/sles11-sdk-sp4-pool/ SLES_11_SP4_SDK_POOL
+
 RUN zypper -n install --auto-agree-with-licenses lua=5.1.4-1.15
 RUN zypper -n install --auto-agree-with-licenses lua-devel=5.1.4-1.15
 RUN zypper -n install --auto-agree-with-licenses pcre-devel
@@ -10,6 +15,7 @@ RUN zypper -n install --auto-agree-with-licenses libopenssl-devel
 RUN zypper -n install --auto-agree-with-licenses tar
 RUN zypper -n install --auto-agree-with-licenses make
 RUN zypper -n install --auto-agree-with-licenses file
+RUN zypper -n install --auto-agree-with-licenses libtool
 
 RUN mkdir /home/apache_build
 WORKDIR /home/apache_build/
