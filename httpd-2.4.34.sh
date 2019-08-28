@@ -13,9 +13,10 @@ zypper -n install --auto-agree-with-licenses libexpat-devel
 
 mkdir /home/apache_build && cd /home/apache_build/
 
-curl -O http://mirrors.tuna.tsinghua.edu.cn/apache//httpd/httpd-2.4.34.tar.gz
-curl -O  https://archive.apache.org/dist/apr/apr-1.6.3.tar.gz
-curl -O http://mirrors.shu.edu.cn/apache//apr/apr-util-1.6.1.tar.gz
+curl -O http://archive.apache.org/dist/httpd/httpd-2.4.34.tar.gz
+curl -O https://archive.apache.org/dist/apr/apr-1.6.3.tar.gz
+curl -O https://www.apache.org/dist/apr/apr-util-1.6.1.tar.gz
+
 
 tar xzvf apr-1.6.3.tar.gz
 tar xzvf apr-util-1.6.1.tar.gz
